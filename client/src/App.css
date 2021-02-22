@@ -1,6 +1,6 @@
 body{
   background: linear-gradient(to right, #ff6929 23%, #fff82e 80%);
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 .AddingNewPassword{
   background-color: white;
@@ -8,7 +8,37 @@ body{
   width: fit-content;
   height: fit-content;
   padding: 10px 50px 20px 20px;
+  margin: auto;
 }
 .AddingNewPassword ul{
   list-style-type: none;
+}
+.AddingNewPassword ul li{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.small-button{
+  border: 1px solid tomato;
+  border-radius: 15px;
+  background-color: wheat;
+  padding: 5px 0px 5px 0px;
+  color:sienna;
+  font-size: small;
+  font-weight: bold;
+}
+.small-button:hover{
+  border-color: aqua;
+  background-color: aquamarine;
+  color:blue;
+}
+.small-input{
+  border: 2px solid rgb(252, 242, 110);
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  color:darkorange;
+  font-weight: bold;
+  font-size: medium;
+}
+.small-input:focus{
+  background-color: lemonchiffon;
 }

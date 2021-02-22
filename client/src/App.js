@@ -9,13 +9,13 @@ function App() {
             <h3>Password Manager</h3>
           </li>
           <li>
-            <input type="text" placeholder="Ex. password123" />
+            <input className='small-input' type="text" placeholder="Ex. password123" />
           </li>
           <li>
-            <input type="text" placeholder="Ex. facebook.com" />
+            <input className='small-input' type="text" placeholder="Ex. facebook.com" />
           </li>
           <li>
-            <button>Add password</button>
+            <div className='small-button'>ADD PASSWORD</div>
           </li>
         </ul>
       </div>
