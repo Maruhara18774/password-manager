@@ -26,7 +26,14 @@ const decryptPassword = (encryption) =>{
   {password: encryption.password, 
   iv: encryption.iv}
   ).then(response =>{
-    console.log(response.data);
+    setPasswordList(passwordList.map((val)=>{
+      return val.id == encryption.id 
+      ? {id: val.id,
+        password: val.password,
+        title: response.data,
+      iv: val.iv}
+      :val;
+    }))
   })
 };
 
@@ -67,7 +74,7 @@ const decryptPassword = (encryption) =>{
       <div className="Passwords">
             {passwordList.map((val,key)=>{
               return(
-                <div className="Passwords-element" onClick={()=>decryptPassword({password:val.password,iv: val.iv})} key={key}>
+                <div className="Passwords-element" onClick={()=>decryptPassword({password:val.password,iv: val.iv,id: val.id})} key={key}>
                   <h4>{val.title}</h4>
                   </div>
               )
