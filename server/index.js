@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const PORT = 8080;
 
-const {} = require('./EncryptionHandler');
+const { encrypt } = require('./EncryptionHandler');
 
 
 app.use(cors());
@@ -19,9 +19,9 @@ const db = mysql.createConnection({
 })
 app.post('/addPassword',(req,res)=>{
     const {password,title} = req.body;
-
+    const hashedPassword = encrypt(password)
     db.query(
-        "INSERT INTO passwords (password, title) VALUE (?,?)",[password,title],
+        "INSERT INTO passwords (password, title, iv) VALUE (?,?,?)",[hashedPassword.password,title,hashedPassword.iv],
         (err, result) =>{
             if(err){
                 console.log(err);
