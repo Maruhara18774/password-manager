@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const PORT = 8080;
 
-const { encrypt } = require('./EncryptionHandler');
+const { encrypt, decrypt } = require('./EncryptionHandler');
 
 
 app.use(cors());
@@ -16,6 +16,19 @@ const db = mysql.createConnection({
     password: 'Maruhara18774',
     database: 'passwordmanager',
 
+})
+app.get('/showPasswords',(req,res)=>{
+    db.query('SELECT * FROM passwords;',
+    (err, result) =>{
+        if(err){
+            console.log(err);
+        } else{
+            res.send(result)
+        }
+    })
+});
+app.post('/decryptPassword',(req,res)=>{
+    res.send(decrypt(req.body));
 })
 app.post('/addPassword',(req,res)=>{
     const {password,title} = req.body;

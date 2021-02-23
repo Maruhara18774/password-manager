@@ -42,3 +42,20 @@ body{
 .small-input:focus{
   background-color: lemonchiffon;
 }
+
+.Passwords{
+  background-color: white;
+  border-radius: 15px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 50px 20px 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+.Passwords .Passwords-element{
+  border: 2px solid rgb(252, 242, 110);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  font-size: small;
+  margin-bottom: 10px;
+}
