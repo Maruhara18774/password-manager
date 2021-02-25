@@ -47,7 +47,7 @@ const decryptPassword = (encryption) =>{
           <li>
             <input className='small-input' 
             type="text" 
-            placeholder="Ex.. password123" 
+            placeholder="Ex. password123" 
             onChange={(event)=>{
               setPassword(event.target.value)
             }}
